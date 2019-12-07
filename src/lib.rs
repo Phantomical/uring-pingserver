@@ -1,4 +1,4 @@
-#![feature(io_slice_advance, slice_ptr_range)]
+#![feature(io_slice_advance)]
 
 pub mod buf;
 pub mod io;
@@ -43,7 +43,7 @@ async fn worker_driver(mut stream: TcpStream) {
         let _bytes = {
             let slice = unsafe {
                 std::slice::from_raw_parts_mut(
-                    rbuf.as_mut_ptr_range().end,
+                    rbuf.as_mut_ptr().wrapping_add(rbuf.len()),
                     rbuf.capacity() - rbuf.len(),
                 )
             };
