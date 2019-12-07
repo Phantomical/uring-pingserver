@@ -36,8 +36,8 @@ fn acceptor_thread(sock: SocketAddr, chan: Sender<TcpStream>) -> IOResult<()> {
 }
 
 async fn worker_driver(mut stream: TcpStream) {
-    let mut rbuf = Vec::with_capacity(1024);
-    let mut wbuf = Vec::with_capacity(1024);
+    let mut rbuf = Vec::<u8>::with_capacity(1024);
+    let mut wbuf = Vec::<u8>::with_capacity(1024);
 
     'outer: loop {
         let _bytes = {
