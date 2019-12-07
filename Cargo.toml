@@ -5,6 +5,6 @@ authors = ["swlynch"]
 edition = "2018"
 
 [dependencies]
-iou = { path = "../iou" }
+iou = { git = "https://github.com/phantomical/iou", branch="custom" }
 libc = "0.2"
 bytes = "0.4"
