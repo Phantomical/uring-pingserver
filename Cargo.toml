@@ -1,0 +1,10 @@
+[package]
+name = "pingserver"
+version = "0.1.0"
+authors = ["swlynch"]
+edition = "2018"
+
+[dependencies]
+iou = { path = "../iou" }
+libc = "0.2"
+bytes = "0.4"
